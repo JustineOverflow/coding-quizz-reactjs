@@ -17,12 +17,14 @@ class Answer extends Component {
     render() {
         return <section className="Answer">
             <div>
-                <input placeholder="insert a number" type="text" id="text"
+                <form>
+                <input method="POST" placeholder="insert a number" type="text" id="text"
                        value={this.state.answer} onChange={this.onInputChange}/>
 
                 <button className="button" onClick={this.saveAnswer}>
                     <p>Submit answer</p>
                 </button>
+                </form>
             </div>
         </section>
     }
