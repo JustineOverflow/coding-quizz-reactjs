@@ -1,4 +1,15 @@
-.question {
+.home-icon {
+   text-align: left;
+   color: blanchedalmond;
+   font-size: 3rem;
+   margin: 1rem;
+   cursor: pointer;
+
+   &:hover {
+      color: darkslategrey;
+   }
+}
+.quiz {
    display: grid;
    margin: 3rem;
    grid-template-columns: 1fr;
@@ -20,6 +31,7 @@
 
       &-text {
          color: #ef4933;
+         font-size: 3rem;
          margin-top: 7rem;
          margin-left: 1rem;
          margin-right: 1rem;

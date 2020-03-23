@@ -1,14 +1,17 @@
 import React from 'react';
-import Question from './Question/Question';
-
+import {BrowserRouter, Route} from 'react-router-dom';
+import Home from './Home/Home';
+import Quiz from './Quiz/Quiz';
+import {Switch} from "react-router";
 
 
 function App() {
-  return (
-    <div className="App">
-      <Question/>
-    </div>
-  );
+    return (
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/quiz" component={Quiz}/>
+        </Switch>
+    );
 }
 
 export default App;

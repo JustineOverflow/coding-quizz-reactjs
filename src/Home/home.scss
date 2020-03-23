@@ -1,0 +1,31 @@
+.home {
+  background-color: blanchedalmond;
+  text-align: center;
+  border-radius: 5rem;
+  margin: 1rem;
+  padding: 3rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+
+  &-welcome {
+
+    padding: 3rem;
+    color: darkslategrey;
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  &-rules {
+    margin: 3rem;
+    background-color: #ef4933;
+
+
+    &-list{
+
+    }
+
+  }
+
+  &-ready {
+    margin: 5rem;
+  }
+}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import {Link, Route} from 'react-router-dom';
 
-class Question extends Component {
+class Quiz extends Component {
 
     constructor(props) {
         super(props);
@@ -27,7 +28,7 @@ class Question extends Component {
             let response = await fetch('http://127.0.0.1:5000/quiz');
             let question = await response.json();
             this.setState({question})
-            this.setState({count: this.state.count +1})
+            this.setState({count: this.state.count + 1})
         })();
     };
 
@@ -44,15 +45,19 @@ class Question extends Component {
 
 
     render() {
-        return <section className="question">
+        return <section className="quiz">
+            <header>
+                <nav className="home-icon">
+                    <Link to="/"> <i className="home-icon fas fa-home"></i></Link>
+                </nav>
+            </header>
             <div className="title">
-
                 <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
                     className="title-icon fas fa-question-circle"></i></h1>
             </div>
-            <h3 className="question-title">Question <span className="count">{this.state.count}</span>:</h3>
-            <div className="question-ask">
-                <h1 className="question-ask-text">{this.state.question.name}</h1>
+            <h3 className="quiz-title">Question <span className="count">{this.state.count}</span>:</h3>
+            <div className="quiz-ask">
+                <h1 className="quiz-ask-text">{this.state.question.name}</h1>
             </div>
             <div className="answer">
                 <h3 className="answer-title">Choose the right answer:</h3>
@@ -72,4 +77,4 @@ class Question extends Component {
     }
 }
 
-export default Question;
+export default Quiz;
