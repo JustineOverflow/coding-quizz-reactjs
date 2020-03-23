@@ -6,10 +6,12 @@ class Question extends Component {
         super(props);
         this.state = {
             question: {
+                key:'??',
                 name: '??',
-                answer: '??',
+                score: '??',
                 choices: []
             },
+            score: 0
         };
         this.onChoiceClicked = this.onChoiceClicked.bind(this)
     }
@@ -23,21 +25,28 @@ class Question extends Component {
         (async () => {
             let response = await fetch('http://127.0.0.1:5000/quiz');
             let question = await response.json();
-            console.log(question);
             this.setState({question})
         })();
     };
 
     onChoiceClicked(event, choice) {
-        console.log(choice)
+        (async () => {
+            let response = await fetch(`http://127.0.0.1:5000/check-answer?key=${this.state.question.key}&guess=${choice}`);
+            let correct = await response.json();
+            console.log(correct);
+            if (correct)
+                this.setState({score: this.state.score + 1})
+        })();
     }
+
 
     render() {
         return <section className="question">
-            <h1> Question: {this.state.question.name} </h1>
+            <h1>Question: {this.state.question.name} </h1>
             <h3>Choose the right answer:</h3>
             {this.state.question.choices.map(choice =>
-                <button type="submit" onClick={event => {this.onChoiceClicked(event, choice)}}>{choice}</button>)}
+                <button key={choice}  type="submit" onClick={event => {this.onChoiceClicked(event, choice)}}>{choice}</button>)}
+            <h3>Score: {this.state.score}</h3>
         </section>
     }
 }
