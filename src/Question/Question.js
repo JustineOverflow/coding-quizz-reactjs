@@ -11,7 +11,8 @@ class Question extends Component {
                 score: '??',
                 choices: []
             },
-            score: 0
+            score: 0,
+            count: 0
         };
         this.onChoiceClicked = this.onChoiceClicked.bind(this)
     }
@@ -26,6 +27,7 @@ class Question extends Component {
             let response = await fetch('http://127.0.0.1:5000/quiz');
             let question = await response.json();
             this.setState({question})
+            this.setState({count: this.state.count +1})
         })();
     };
 
@@ -43,11 +45,12 @@ class Question extends Component {
 
     render() {
         return <section className="question">
-            <div>
-                <i className="icon-question far fa-question-circle"></i>
-                <h2>Coding Quiz</h2>
+            <div className="title">
+
+                <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
+                    className="title-icon fas fa-question-circle"></i></h1>
             </div>
-            <h3 className="question-title">Question:</h3>
+            <h3 className="question-title">Question <span className="count">{this.state.count}</span>:</h3>
             <div className="question-ask">
                 <h1 className="question-ask-text">{this.state.question.name}</h1>
             </div>
