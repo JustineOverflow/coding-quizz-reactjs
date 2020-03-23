@@ -43,6 +43,10 @@ class Question extends Component {
 
     render() {
         return <section className="question">
+            <div>
+                <i className="icon-question far fa-question-circle"></i>
+                <h2>Coding Quiz</h2>
+            </div>
             <h3 className="question-title">Question:</h3>
             <div className="question-ask">
                 <h1 className="question-ask-text">{this.state.question.name}</h1>
@@ -51,6 +55,7 @@ class Question extends Component {
                 <h3 className="answer-title">Choose the right answer:</h3>
                 {this.state.question.choices.map(choice =>
                     <div className="answer-choices">
+                        <i className="icon-choice far fa-hand-point-right"></i>
                         <button className="button" key={choice} type="submit" onClick={event => {
                             this.onChoiceClicked(event, choice)
                         }}>{choice}</button>
