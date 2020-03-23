@@ -1,0 +1,90 @@
+//Root
+$color-orange: #ef4933;
+$color-blue-light: rgba(144, 204, 255, 0.23);
+$color-blue-dark: #175C99;
+$color-primary: #dfb60d;
+
+$color-grey-medium: #e7eef4;
+$color-grey-dark: #7F8592;
+$color-grey-light: #F3F6F9;
+
+$color-white: #FFFFFF;
+
+
+//FONT
+$font-primary: "courier new";
+
+//RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em;
+$bp-small: 37em;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary, sans-serif;
+  background-color: $color-orange;
+  color: black;
+  font-weight: 600;
+  line-height: 1.3125;
+  font-size: 15px;
+  border: solid 1px $color-grey-medium;
+}
+
+.container {
+  display: grid;
+  background-color: $color-white;
+  //grid-template-columns: 20% 50% 30%;
+  border-radius: $color-grey-medium;
+
+  & > * {
+    padding: 20px;
+    font-size: 3rem;
+  }
+
+
+  //@media only screen and (max-width: $bp-largest) {
+  //  grid-template-columns: 10% 70% 20%;
+  //}
+  //
+  //@media only screen and (max-width: $bp-large) {
+  //  grid-template-columns: 15% 85% 0%;
+  //}
+  //
+  //@media only screen and (max-width: $bp-medium) {
+  //  grid-template-columns: 15% 85% 0%;
+  //}
+  //
+  //@media only screen and (max-width: $bp-small) {
+  //  grid-template-columns: 15% 85% 0%;
+  //}
+}
+
+//button {
+//  outline: none;
+//  cursor: pointer;
+//
+//  &:focus {
+//    transform: translateY(2.5%);
+//  }
+//}
+//
+//input {
+//  outline: none;
+//}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Question from './Question/Question';
-import Score from './Score/Score';
 
 
 
