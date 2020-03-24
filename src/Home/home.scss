@@ -1,10 +1,11 @@
 .home {
   background-color: blanchedalmond;
-  text-align: center;
   border-radius: 5rem;
-  margin: 1rem;
+  margin: 3rem;
   padding: 3rem;
   box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+  color: darkslategrey;
+  text-align: center;
 
   &-welcome {
 
@@ -12,20 +13,84 @@
     color: darkslategrey;
     font-size: 3rem;
     font-weight: 200;
+    text-align: center;
+  }
+
+  &-container {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5rem;
+    column-gap: 3rem;
+
+    &-column1 {
+      grid-column: 1/2;
+      margin-top: 2rem;
+
+      &-text {
+      }
+    }
+
+    &-column2 {
+      grid-column: 2/-1;
+      text-align: left;
+      margin-left: 3rem;
+    }
+
   }
 
   &-rules {
-    margin: 3rem;
-    background-color: #ef4933;
+    margin-bottom: 2rem;
+    color: #ef4933;
+    font-size: 2.3rem;
 
 
-    &-list{
+    &-list {
 
     }
 
   }
 
   &-ready {
+    text-align: center;
     margin: 5rem;
+    font-size: 2.7rem;
+    font-weight: 200;
+  }
+
+  &-button {
+    text-align: center;
+
+    text-decoration: none;
+    border-radius: 5rem;
+    height: 10rem;
+    width: 30rem;
+    margin-bottom: 2rem;
+    background-color: darkslategrey;
+    color: blanchedalmond;
+    font-family: inherit;
+    font-size: 3rem;
+    outline: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+    cursor: pointer;
+
+    &:focus {
+      transform: translateY(2.5%);
+    }
+
+    a:link, a:visited, a:active {
+      text-decoration: none;
+      color: blanchedalmond;
+    }
+    a:hover {
+      transform: translateY(2.5%);
+    }
   }
 }
+
+.computer {
+  color: #ef4933;
+  font-size: 5rem;
+  padding: 3rem;
+}
+
