@@ -1,0 +1,92 @@
+.endgame {
+
+  &-icon {
+    margin: 3rem;
+    color: #ef4933;
+    font-size: 7rem;
+  }
+
+  &-score {
+    margin: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+  }
+
+  &-count {
+    background-color: darkslategrey;
+    font-size: 5rem;
+    color: blanchedalmond;
+  }
+
+  &-total {
+    font-size: 3rem;
+    color: #ef4933;
+  }
+}
+
+.action {
+  display: grid;
+
+  &-call {
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    color: blanchedalmond;
+    font-weight: 600;
+    letter-spacing: 10px;
+  }
+
+  &-start {
+    text-align: center;
+    color: blanchedalmond;
+    border-color: darkslategrey;
+    margin: 5rem;
+    border-radius: 5rem;
+    background-color: darkslategrey;
+    height: 7rem;
+    width: min(30rem);
+    font-family: inherit;
+    font-size: 2rem;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.21);
+    cursor: pointer;
+
+    &:focus {
+      transform: translateY(2.5%);
+    }
+
+    a:link, a:visited, a:active {
+      text-decoration: none;
+      color: blanchedalmond;
+    }
+  }
+
+  &-home {
+    text-align: center;
+    color: blanchedalmond;
+    border-color: #b42d1e;
+    margin: 5rem;
+    border-radius: 5rem;
+    background-color: #b42d1e;
+    height: 7rem;
+    width: min(30rem);
+    font-family: inherit;
+    font-size: 2rem;
+    outline: none;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.21);
+    cursor: pointer;
+
+    &:focus {
+      transform: translateY(2.5%);
+    }
+
+    a:link, a:visited, a:active {
+      text-decoration: none;
+      color: blanchedalmond;
+    }
+  }
+
+
+}

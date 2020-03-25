@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import {Link, Route} from 'react-router-dom';
 import EndGame from "../EndGame/EndGame";
 
+
 class Quiz extends Component {
 
     constructor(props) {
         super(props);
+        this.props = props;
         this.state = {
             question: {
                 key: '??',
@@ -83,13 +85,12 @@ class Quiz extends Component {
                         )}
                     </div>
                     <div className="score">
-                        <h3 className="score-title">Score: {this.state.score}</h3>
+                        <h3 className="score-title">Score: {this.state.score} / 20</h3>
                     </div>
-                    }
 
                 </section>
             } else {
-                return <EndGame/>
+                return <EndGame finalScore={this.state.score}/>
             }
         }
     }
