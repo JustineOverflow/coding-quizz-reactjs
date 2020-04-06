@@ -1,12 +1,17 @@
 import React from "react";
 import Quiz from "../Quiz/Quiz";
 import Home from "../Home/Home";
-import {Route} from "react-router";
+import {Route, Switch} from "react-router";
 import {Link} from "react-router-dom";
 
 function EndGame(props) {
     return (
         <section className="endgame">
+            <header>
+                <nav class="home-icon">
+                    <Link to="/"><i className="home-icon fas fa-home"></i></Link>
+                </nav>
+            </header>
             <div className="home">
                 <h1>The quiz is over! </h1>
                 <i className="endgame-icon far fa-laugh-beam"></i>
@@ -16,15 +21,10 @@ function EndGame(props) {
                     className="endgame-total">20</span>
                 </div>
             </div>
-                <h3 className="action-call"> Can you do better ? </h3>
-                <button className="action-start">
-                    <Link to="/quiz">Yes, Start again!</Link>
-                    <Route path="/quiz" exact component={Quiz}/>
-                </button>
-                <button className="action-home">
-                    <Link to="/">No, bring me back home</Link>
-                    <Route path="/" exact component={Home}/>
-                </button>
+                {/*<nav>*/}
+                {/*    <Link to="/">Bring me back home</Link>*/}
+                {/*    <Route exact={true} path="/" component={Home}/>*/}
+                {/*</nav>*/}
         </section>
     )
 }

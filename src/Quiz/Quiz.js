@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link, Route} from 'react-router-dom';
 import EndGame from "../EndGame/EndGame";
 
-
 class Quiz extends Component {
 
     constructor(props) {
@@ -90,7 +89,18 @@ class Quiz extends Component {
 
                 </section>
             } else {
-                return <EndGame finalScore={this.state.score}/>
+                return (
+                    <EndGame finalScore={this.state.score}/>
+                    // <div>
+                    //     <Link to="/quiz">Start the quiz</Link>
+                    //     <Route path="/quiz" exact component={Quiz}/>
+                    // </div>
+                    // <nav>
+                    //     <Link to="/end-game" />
+                    // <EndGame finalScore={this.state.score}/>
+                    // <Route path="/end-game" exact component={EndGame}/>
+                    // </nav>
+                )
             }
         }
     }
