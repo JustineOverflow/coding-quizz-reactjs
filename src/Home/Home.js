@@ -16,6 +16,7 @@ class Home extends Component {
                             <li className="home-rules-list"> There is a total of 20 points</li>
                         </div>
                         <div className="home-container-column2">
+                            <i className="arrow fas fa-arrow-circle-down"></i>
                             <button className="home-button">
                                 <Link to="/quiz">Start the quiz</Link>
                                 <Route path="/quiz" exact component={Quiz}/>
