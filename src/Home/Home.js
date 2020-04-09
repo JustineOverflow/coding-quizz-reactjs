@@ -12,7 +12,7 @@ class Home extends Component {
                             <h3 className="home-rules">The rules are simple:</h3>
                             <li className="home-rules-list"> Select your answer</li>
                             <li className="home-rules-list"> If it is the right answer, you get 1 point</li>
-                            <li className="home-rules-list"> If the answer is wrong, you do not loose point</li>
+                            <li className="home-rules-list"> If the answer is wrong, you do not lose point</li>
                             <li className="home-rules-list"> There is a total of 20 points</li>
                         </div>
                         <div className="home-container-column2">

@@ -2,7 +2,6 @@
    text-align: left;
    color: blanchedalmond;
    font-size: 3rem;
-   margin: 1rem;
    cursor: pointer;
 
    &:hover {
@@ -18,11 +17,11 @@
 
    &-title {
       color: blanchedalmond;
-      margin: 3rem;
+      margin: 2rem;
    }
 
    &-ask {
-      height: 20rem;
+      height: 15rem;
       background-color: blanchedalmond;
       border-radius: 5rem;
       box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
@@ -32,7 +31,7 @@
       &-text {
          color: #ef4933;
          font-size: 3rem;
-         margin-top: 7rem;
+         margin-top: 5rem;
          margin-left: 1rem;
          margin-right: 1rem;
          font-weight: 500;
