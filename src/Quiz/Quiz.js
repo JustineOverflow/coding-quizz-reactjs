@@ -16,7 +16,7 @@ class Quiz extends Component {
             },
             score: 0,
             count: 0,
-            total: 20,
+            total: 10,
             isFinished: false,
         };
         this.onChoiceClicked = this.onChoiceClicked.bind(this)
