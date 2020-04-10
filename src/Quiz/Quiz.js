@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link, Route} from 'react-router-dom';
 import EndGame from "../EndGame/EndGame";
+import Timer from "./Timer";
+import Home from "../Home/Home";
 
 class Quiz extends Component {
 
@@ -14,9 +16,11 @@ class Quiz extends Component {
                 score: '??',
                 choices: []
             },
+
             score: 0,
             count: 0,
             total: 10,
+
             isFinished: false,
         };
         this.onChoiceClicked = this.onChoiceClicked.bind(this)
@@ -56,6 +60,7 @@ class Quiz extends Component {
     }
 
     render() {
+
         {
             if (!this.state.isFinished) {
                 return <section className="quiz">
@@ -67,6 +72,7 @@ class Quiz extends Component {
                     <div className="title">
                         <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
                             className="title-icon fas fa-question-circle"></i></h1>
+                        <Timer/>
                     </div>
                     <h3 className="quiz-title">Question <span className="count">{this.state.count}</span>:</h3>
                     <div className="quiz-ask">
