@@ -40,8 +40,8 @@ class Timer extends Component {
         return (
             <div>
                 {minutes === 0 && seconds === 0
-                    ? <h1>Times Up!</h1>
-                    : <h1> Time Remaining: <span>{minutes} : {seconds < 10 ? `0${seconds}` : seconds} </span> </h1>
+                    ? <h1 className="timesup">Times Up!</h1>
+                    : <h1 className="timerContainer"> Time Remaining: <span className="time">{minutes} : {seconds < 10 ? `0${seconds}` : seconds} </span> </h1>
                 }
             </div>
         )

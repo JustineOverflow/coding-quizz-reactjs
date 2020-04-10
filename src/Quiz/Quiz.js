@@ -64,15 +64,15 @@ class Quiz extends Component {
         {
             if (!this.state.isFinished) {
                 return <section className="quiz">
-                    <header>
-                        <nav className="home-icon">
-                            <Link to="/"><i className="home-icon fas fa-home"></i></Link>
-                        </nav>
+                    <header className="header">
+                        <Link to="/"><i className="header-home-icon fas fa-home"></i></Link>
+                        <div className="header-timer">
+                        <Timer/>
+                        </div>
                     </header>
                     <div className="title">
                         <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
                             className="title-icon fas fa-question-circle"></i></h1>
-                        <Timer/>
                     </div>
                     <h3 className="quiz-title">Question <span className="count">{this.state.count}</span>:</h3>
                     <div className="quiz-ask">
