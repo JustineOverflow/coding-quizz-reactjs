@@ -26,7 +26,7 @@ class Home extends Component {
                     </div>
                     <div className="home-container-column2">
                         <i className="arrow fas fa-arrow-circle-down"></i>
-                        <button onClick={this.startTimer} className="home-button">
+                        <button className="home-button">
                             <Link to="/quiz">Start the quiz</Link>
                             <Route path="/quiz" exact component={Quiz}/>
                         </button>

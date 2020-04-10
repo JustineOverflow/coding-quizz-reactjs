@@ -21,6 +21,8 @@ function EndGame(props) {
                     className="endgame-total">20</span>
                 </div>
             </div>
+
+            <a href="whatsapp://send?text=Can%20you%20beat%20my%20score%3F%20Test%20your%20coding%20knowledge%20with%20this%20fun%20quiz!" data-event-category="Social" data-event-action="Share:Whatsapp">Share on Whatsapp</a>
                 {/*<nav>*/}
                 {/*    <Link to="/">Bring me back home</Link>*/}
                 {/*    <Route exact={true} path="/" component={Home}/>*/}

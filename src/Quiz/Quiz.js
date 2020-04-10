@@ -97,6 +97,7 @@ class Quiz extends Component {
             } else {
                 return (
                     <EndGame finalScore={this.state.score}/>
+
                     // <div>
                     //     <Link to="/quiz">Start the quiz</Link>
                     //     <Route path="/quiz" exact component={Quiz}/>
