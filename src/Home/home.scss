@@ -41,12 +41,20 @@
   &-rules {
     padding: 1rem 1rem 1rem 2rem;
     font-family: sans-serif;
-    font-weight: lighter;
+    font-weight: 700;
     letter-spacing: 5px;
     margin-bottom: 3rem;
-    color: rgb(255, 255, 255);
     font-size: 2.7rem;
-    background-image: linear-gradient(rgba(darkslategray, 0.6), rgba(darkslategray, 0.4));
+    background-image: linear-gradient(to right, orangered, darkslategray);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all .2s;
+
+    &:hover {
+      transform: skewY(2deg) skewX(5deg) scale(1.1);
+      text-shadow: .5rem 1rem 2rem rgba(black, .2);
+    }
+
     width: 70%;
 
     &:hover {
