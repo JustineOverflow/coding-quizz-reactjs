@@ -1,9 +1,21 @@
 .endgame {
+  border-radius: 5rem;
+  background-color: blanchedalmond;
+  margin: 3rem;
+  padding: 3rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+  text-align: center;
+  z-index: 1;
+  color: #ef4933;
 
   &-icon {
     margin: 3rem;
     color: #ef4933;
-    font-size: 7rem;
+    font-size: 3rem;
+
+    &:hover {
+      color: darkslategrey;
+    }
   }
 
   &-score {

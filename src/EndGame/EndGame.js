@@ -7,13 +7,13 @@ import {Link} from "react-router-dom";
 function EndGame(props) {
 
     return (
-        <section className="endgame">
+        <section>
             <header>
-                <nav class="home-icon">
+                <nav class="endgame-icon">
                     <Link to="/"><i className="home-icon fas fa-home"></i></Link>
                 </nav>
             </header>
-            <div className="home">
+            <div className="endgame">
                 <h1>The quiz is over! </h1>
                 <i className="endgame-icon far fa-laugh-beam"></i>
                 <h3 className="endgame-score">Your total is score is:</h3>

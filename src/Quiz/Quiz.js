@@ -63,7 +63,7 @@ class Quiz extends Component {
             setTimeout(() => {
                 this.loadQuestion();
                 buttonClicked.style.backgroundColor = 'blanchedalmond';
-            }, 500);
+            }, 350);
         })();
     }
 
