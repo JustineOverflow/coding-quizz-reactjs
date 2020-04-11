@@ -49,13 +49,21 @@ class Quiz extends Component {
     };
 
     onChoiceClicked(event, choice) {
+        const buttonClicked = event.target;
         (async () => {
             let response = await fetch(`http://127.0.0.1:5000/check-answer?key=${this.state.question.key}&guess=${choice}`);
             let correct = await response.json();
             console.log(correct);
-            if (correct)
+            if (correct) {
                 this.setState({score: this.state.score + 1});
-            this.loadQuestion()
+                buttonClicked.style.backgroundColor = 'green';
+            } else {
+                buttonClicked.style.backgroundColor = 'red';
+            }
+            setTimeout(() => {
+                this.loadQuestion();
+                buttonClicked.style.backgroundColor = 'blanchedalmond';
+            }, 500);
         })();
     }
 
@@ -67,7 +75,7 @@ class Quiz extends Component {
                     <header className="header">
                         <Link to="/"><i className="header-home-icon fas fa-home"></i></Link>
                         <div className="header-timer">
-                        <Timer/>
+                            <Timer/>
                         </div>
                     </header>
                     <div className="title">
@@ -83,7 +91,8 @@ class Quiz extends Component {
                         {this.state.question.choices.map(choice =>
                             <div className="answer-choices">
                                 <i className="icon-choice far fa-hand-point-right"></i>
-                                <button className="button" key={choice} type="submit" onClick={event => {
+                                <button style={{background: 'blanchedalmond'}} className="button" key={choice}
+                                        type="submit" onClick={event => {
                                     this.onChoiceClicked(event, choice)
                                 }}>{choice}</button>
                             </div>
