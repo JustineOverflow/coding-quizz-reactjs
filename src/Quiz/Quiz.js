@@ -99,7 +99,7 @@ class Quiz extends Component {
                         )}
                     </div>
                     <div className="score">
-                        <h3 className="score-title">Score: {this.state.score} / 20</h3>
+                        <h3 className="score-title">Score: <span className="score-number">{this.state.score} / 20</span></h3>
                     </div>
 
                 </section>
