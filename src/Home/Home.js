@@ -30,8 +30,6 @@ class Home extends Component {
                             <Link to="/quiz">Start the quiz</Link>
                             <Route path="/quiz" exact component={Quiz}/>
                         </button>
-                        {/*<h3 className="home-container-column1-text">Have some fun and test your coding knowledge with this quiz</h3>*/}
-                        {/*<i className="computer fas fa-laptop-code"></i>*/}
                     </div>
                 </div>
             </section>

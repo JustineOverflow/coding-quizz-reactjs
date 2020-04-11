@@ -9,25 +9,29 @@ function EndGame(props) {
     return (
         <section>
             <header>
-                <nav class="endgame-icon">
-                    <Link to="/"><i className="home-icon fas fa-home"></i></Link>
+                <nav>
+                    <Link to="/"><i className="endgame-icon fas fa-home"></i></Link>
                 </nav>
             </header>
             <div className="endgame">
                 <h1>The quiz is over! </h1>
-                <i className="endgame-icon far fa-laugh-beam"></i>
+                <i className="smiley far fa-laugh-beam"></i>
                 <h3 className="endgame-score">Your total is score is:</h3>
                 <div>
                     <span className="endgame-count">{props.finalScore}</span> out of <span
-                    className="endgame-total">20</span>
+                    className="endgame-total">{props.total}</span>
                 </div>
             </div>
 
-            <a href={`whatsapp://send?text=I%20did%20${props.finalScore}%20on%20this%20fun%20coding%20quiz!%20Can%20you%20beat%20my%20score%3F%20`} data-event-category="Social" data-event-action="Share:Whatsapp">Share on Whatsapp</a>
-                {/*<nav>*/}
-                {/*    <Link to="/">Bring me back home</Link>*/}
-                {/*    <Route exact={true} path="/" component={Home}/>*/}
-                {/*</nav>*/}
+            <div className="share">
+                <div>
+                    <i className="whatsapp fab fa-whatsapp"></i>
+                </div>
+                <a className="share-call"
+                   href={`whatsapp://send?text=I%20did%20${props.finalScore}%20on%20this%20fun%20coding%20quiz!%20Can%20you%20beat%20my%20score%3F%20`}
+                   data-event-category="Social" data-event-action="Share:Whatsapp">Share my result with my friends on
+                    Whatsapp! </a>
+            </div>
         </section>
     )
 }
