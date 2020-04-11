@@ -2,7 +2,7 @@
   border-radius: 5rem;
   background-color: blanchedalmond;
   margin: 3rem;
-  padding: 3rem;
+  padding: 2rem;
   box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
   color: #f8f7ff;
   text-align: center;
@@ -23,7 +23,7 @@
     background-size: cover;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 12rem;
+    padding: 8rem;
     column-gap: 3rem;
     z-index: 10;
     font-size: 2rem;
@@ -39,6 +39,10 @@
   }
 
   &-rules {
+    padding: 1rem 1rem 1rem 2rem;
+    font-family: sans-serif;
+    font-weight: lighter;
+    letter-spacing: 5px;
     margin-bottom: 3rem;
     color: rgb(255, 255, 255);
     font-size: 2.7rem;
@@ -50,7 +54,10 @@
     }
 
     &-list {
+      font-family: sans-serif;
       margin-bottom: 1.5rem;
+      font-weight: lighter;
+      letter-spacing: 3px;
     }
   }
 
@@ -69,8 +76,11 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
     cursor: pointer;
 
-    &:focus {
+    &:hover {
+      background-color: #ef4933;
+      color: darkslategrey;
       transform: translateY(2.5%);
+      box-shadow: 0 15px 30px rgba(0,0,0,.2);
     }
 
     a:link, a:visited, a:active {
@@ -78,8 +88,20 @@
       color: blanchedalmond;
     }
 
-    a:hover {
-      transform: translateY(2.5%);
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.2);
+
+      &::after {
+        transform: scaleX(1) scaleY(1);
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
     }
   }
 }
