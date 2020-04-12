@@ -42,9 +42,21 @@
   margin-bottom: 4rem;
 
   &-call {
-    color: blanchedalmond;
     outline: none;
-    font-size: 2rem;
+    transition: all .2s;
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    background-image: linear-gradient(to right, brown, darkslategray);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  &:hover {
+    transform: skewY(2deg) skewX(5deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
   }
 }
 
@@ -60,4 +72,5 @@
   margin: 2rem;
   color: blanchedalmond;
   font-size: 5rem;
+  text-shadow: .5rem 1rem 2rem rgba(black, .2);
 }

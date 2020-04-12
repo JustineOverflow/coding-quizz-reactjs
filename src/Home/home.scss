@@ -40,8 +40,6 @@
     }
   }
 
-
-
   &-rules {
     padding: 1rem 1rem 1rem 2rem;
     font-family: sans-serif;
@@ -80,7 +78,7 @@
     border-radius: 5rem;
     height: 10rem;
     width: 30rem;
-    margin: 5rem;
+    margin: 3rem;
     background-color: darkslategrey;
     color: blanchedalmond;
     font-family: inherit;
@@ -123,7 +121,6 @@
   background: linear-gradient(to right, orangered, darkslategray 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color:transparent;
-  //background-color: transparent;
   font-size: 5rem;
 }
 

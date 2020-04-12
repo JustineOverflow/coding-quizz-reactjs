@@ -1,32 +1,29 @@
 import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
 import EndGame from "../EndGame/EndGame";
+import { withRouter } from 'react-router-dom'
 
 class Timer extends Component {
 
     state = {
-        minutes: 1,
-        seconds: 0,
-        timesup: false
+        minutes: 0,
+        seconds: 30,
     };
 
     componentDidMount() {
         this.myInterval = setInterval(() => {
-            const { seconds, minutes } = this.state;
+            const {seconds, minutes} = this.state;
 
             if (seconds > 0) {
-                this.setState(({ seconds }) => ({
+                this.setState(({seconds}) => ({
                     seconds: seconds - 1
                 }))
             }
             if (seconds === 0) {
                 if (minutes === 0) {
-                    clearInterval(this.myInterval);
-                    this.setState({
-                        timesUp: true
-                    })
+                    this.props.onTimeout();
                 } else {
-                    this.setState(({ minutes }) => ({
+                    this.setState(({minutes}) => ({
                         minutes: minutes - 1,
                         seconds: 59
                     }))
@@ -44,14 +41,12 @@ class Timer extends Component {
         const {minutes, seconds} = this.state;
         return (
             <div>
-                {minutes === 0 && seconds === 0 ?
-                    <Route exact={true} path="/end-game" component={EndGame}/>
-                    : <h1 className="timerContainer"> Time Remaining: <span className="time">{minutes} : {seconds < 10 ? `0${seconds}` : seconds} </span> </h1>
-                    // <h1 isTimesUps={this.state.timesUp}> Times up!</h1>
-                }
+                <h1 className="timerContainer"> Time Remaining:
+                    <span className="time">{minutes} : {seconds < 10 ? `0${seconds}` : seconds} </span>
+                </h1>
             </div>
         )
     }
 }
 
-export default Timer;
+export default withRouter(Timer);

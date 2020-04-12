@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link, Route} from 'react-router-dom';
 import EndGame from "../EndGame/EndGame";
 import Timer from "./Timer";
+import {withRouter} from 'react-router-dom'
 import Home from "../Home/Home";
 
 class Quiz extends Component {
@@ -42,9 +43,17 @@ class Quiz extends Component {
                 });
             })();
         } else {
-            this.setState({
-                isFinished: true,
-            });
+            return (this.props.history.push({
+                pathname: '/end-game',
+                state: {
+                    finalScore: this.state.score,
+                    total: this.state.total
+                }
+            }))
+
+            // this.setState({
+            //     isFinished: true,
+            // });
         }
     };
 
@@ -70,56 +79,44 @@ class Quiz extends Component {
     render() {
 
         {
-            if (!this.state.isFinished) {
-                return <section className="quiz">
-                    <header className="header">
-                        <Link to="/"><i className="header-home-icon fas fa-home"></i></Link>
-                        <div className="header-timer">
-                            <Timer/>
+            return <section className="quiz">
+                <header className="header">
+                    <Link to="/"><i className="header-home-icon fas fa-home"></i></Link>
+                    <div className="header-timer">
+                        <Timer onTimeout={() => this.props.history.push({
+                            pathname: '/end-game',
+                            state: {finalScore: this.state.score, total: this.state.total}
+                        })}/>
+                    </div>
+                </header>
+                <div className="title">
+                    <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
+                        className="title-icon fas fa-question-circle"></i></h1>
+                </div>
+                <h3 className="quiz-title">Question <span className="count">{this.state.count}</span>:</h3>
+                <div className="quiz-ask">
+                    <h1 className="quiz-ask-text">{this.state.question.name}</h1>
+                </div>
+                <div className="answer">
+                    <h3 className="answer-title">Choose the right answer:</h3>
+                    {this.state.question.choices.map(choice =>
+                        <div className="answer-choices">
+                            <i className="icon-choice far fa-hand-point-right"></i>
+                            <button style={{background: 'blanchedalmond'}} className="button" key={choice}
+                                    type="submit" onClick={event => {
+                                this.onChoiceClicked(event, choice)
+                            }}>{choice}</button>
                         </div>
-                    </header>
-                    <div className="title">
-                        <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
-                            className="title-icon fas fa-question-circle"></i></h1>
-                    </div>
-                    <h3 className="quiz-title">Question <span className="count">{this.state.count}</span>:</h3>
-                    <div className="quiz-ask">
-                        <h1 className="quiz-ask-text">{this.state.question.name}</h1>
-                    </div>
-                    <div className="answer">
-                        <h3 className="answer-title">Choose the right answer:</h3>
-                        {this.state.question.choices.map(choice =>
-                            <div className="answer-choices">
-                                <i className="icon-choice far fa-hand-point-right"></i>
-                                <button style={{background: 'blanchedalmond'}} className="button" key={choice}
-                                        type="submit" onClick={event => {
-                                    this.onChoiceClicked(event, choice)
-                                }}>{choice}</button>
-                            </div>
-                        )}
-                    </div>
-                    <div className="score">
-                        <h3 className="score-title">Score: <span className="score-number">{this.state.score} / {this.state.total}</span></h3>
-                    </div>
+                    )}
+                </div>
+                <div className="score">
+                    <h3 className="score-title">Score: <span
+                        className="score-number">{this.state.score} / {this.state.total}</span></h3>
+                </div>
 
-                </section>
-            } else {
-                return (
-                    <EndGame finalScore={this.state.score}/>
-
-                    // <div>
-                    //     <Link to="/quiz">Start the quiz</Link>
-                    //     <Route path="/quiz" exact component={Quiz}/>
-                    // </div>
-                    // <nav>
-                    //     <Link to="/end-game" />
-                    // <EndGame finalScore={this.state.score}/>
-                    // <Route path="/end-game" exact component={EndGame}/>
-                    // </nav>
-                )
-            }
+            </section>
         }
     }
 }
 
-export default Quiz;
+export default withRouter(Quiz);

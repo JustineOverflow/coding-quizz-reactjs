@@ -3,6 +3,7 @@ import Quiz from "../Quiz/Quiz";
 import Home from "../Home/Home";
 import {Route, Switch} from "react-router";
 import {Link} from "react-router-dom";
+import {withRouter} from 'react-router-dom'
 
 function EndGame(props) {
 
@@ -18,8 +19,8 @@ function EndGame(props) {
                 <i className="smiley far fa-laugh-beam"></i>
                 <h3 className="endgame-score">Your total is score is:</h3>
                 <div>
-                    <span className="endgame-count">{props.finalScore}</span> out of <span
-                    className="endgame-total">{props.total}</span>
+                    <span className="endgame-count">{props.history.location.state.finalScore}</span> out of <span
+                    className="endgame-total">{props.history.location.state.total}</span>
                 </div>
             </div>
 
@@ -37,4 +38,4 @@ function EndGame(props) {
 }
 
 
-export default EndGame;
+export default withRouter(EndGame);
