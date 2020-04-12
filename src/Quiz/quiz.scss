@@ -114,8 +114,10 @@
 .title {
   text-align: center;
   display: grid;
+  font-size: 2rem;
   color: darkslategrey;
   grid-template-columns: 2fr;
+  text-shadow: .5rem 1rem 2rem rgba(black, .2);
 
   &-icon {
     color: darkslategrey;

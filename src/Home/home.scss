@@ -15,6 +15,7 @@
     font-weight: 200;
     text-align: center;
     border-bottom: 2px dotted darkslategrey;
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
   }
 
   &-container {
@@ -22,7 +23,7 @@
     border-radius: 5rem;
     background-size: cover;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     padding: 8rem;
     column-gap: 3rem;
     z-index: 10;
@@ -35,8 +36,11 @@
 
     &-column2 {
       grid-column: 2/-1;
+
     }
   }
+
+
 
   &-rules {
     padding: 1rem 1rem 1rem 2rem;
@@ -44,11 +48,12 @@
     font-weight: 700;
     letter-spacing: 5px;
     margin-bottom: 3rem;
-    font-size: 2.7rem;
+    font-size: 3rem;
     background-image: linear-gradient(to right, orangered, darkslategray);
     -webkit-background-clip: text;
     color: transparent;
     transition: all .2s;
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
 
     &:hover {
       transform: skewY(2deg) skewX(5deg) scale(1.1);
@@ -114,13 +119,17 @@
   }
 }
 
+.arrow {
+  background: linear-gradient(to right, orangered, darkslategray 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+  //background-color: transparent;
+  font-size: 5rem;
+}
+
 .computer {
   color: #ef4933;
   font-size: 5rem;
   padding: 3rem;
 }
 
-.arrow {
-  color: darkslategray;
-  font-size: 5rem;
-}
