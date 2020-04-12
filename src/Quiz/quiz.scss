@@ -7,15 +7,16 @@
     margin-top: 6vh;
     margin-left: 3vh;
     text-align: left;
-    color: darkslategrey;
+    color: white;
     border-color: blanchedalmond;
-    background-color: $color-blue;
+    background-color: darkslategrey;
     border-radius: 50%;
-    padding: 1rem;
+    padding: 2rem;
     font-size: 3rem;
 
     &:hover {
       color: darkslategrey;
+      background-color: white;
       cursor: pointer;
     }
   }

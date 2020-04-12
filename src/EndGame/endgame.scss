@@ -1,76 +1,92 @@
 .endgame {
-  border-radius: 5rem;
-  background-color: blanchedalmond;
-  margin: 3rem;
-  padding: 3rem;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
-  text-align: center;
-  z-index: 1;
-  color: #ef4933;
+  display: grid;
+  justify-items: center;
 
-  &-icon {
+  &-title {
     text-align: center;
-    margin: 3rem;
-    color: blanchedalmond;
     font-size: 4rem;
+    font-weight: 200;
+    letter-spacing: 15px;
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
+    padding: 10rem;
+  }
+
+  &-backhome {
+    grid-column-start: 1/2;
+    text-align: left;
+    color: white;
+    border-color: darkslategrey;
+    background-color: darkslategrey;
+    border-radius: 5rem;
+    font-size: 3rem;
+    padding: 2rem;
+    margin: 2rem;
 
     &:hover {
+      background-color: white;
       color: darkslategrey;
+      cursor: pointer;
+    }
+  }
+  &-score {
+    align-items: center;
+    color: darkslategrey;
+    border-radius: 2rem;
+    padding: 8rem 20rem;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+
+    &-announce {
+      font-size: 3rem;
+      font-weight: lighter;
+      margin-bottom: 3rem;
+    }
+    &-count {
+      background-color: darkslategrey;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-size: 3rem;
+      color:$color-blue;
+    }
+
+    &-total {
+      font-size: 3.2rem;
+    }
+
+    position: relative;
+    &-whatsapp {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 2rem;
+      color: darkslategrey;
+      font-size: 5rem;
     }
   }
 
-  &-score {
-    margin: 2rem;
-    font-size: 2.5rem;
-    margin-bottom: 5rem;
-  }
 
-  &-count {
-    background-color: darkslategrey;
-    font-size: 5rem;
-    color: blanchedalmond;
-  }
-
-  &-total {
-    font-size: 3.2rem;
-    color: #ef4933;
-  }
 }
 
 .share {
   text-align: center;
-  margin-bottom: 4rem;
+  padding: 10rem;
 
   &-call {
+    background-image: linear-gradient(to left, black, darkslategray 40%);
     outline: none;
     transition: all .2s;
     text-shadow: .5rem 1rem 2rem rgba(black, .2);
     font-family: sans-serif;
     font-weight: 700;
     letter-spacing: 5px;
-    margin-bottom: 3rem;
-    font-size: 3rem;
-    background-image: linear-gradient(to right, brown, darkslategray);
+    font-size: 2.5rem;
     -webkit-background-clip: text;
     color: transparent;
-  }
-  &:hover {
-    transform: skewY(2deg) skewX(5deg) scale(1.1);
-    text-shadow: .5rem 1rem 2rem rgba(black, .2);
-  }
-}
 
-.smiley {
-  text-align: center;
-  margin: 2rem;
-  color: darkslategrey;
-  font-size: 4rem;
-}
-
-.whatsapp {
-  text-align: center;
-  margin: 2rem;
-  color: blanchedalmond;
-  font-size: 5rem;
-  text-shadow: .5rem 1rem 2rem rgba(black, .2);
+    &:hover {
+      transform: skewY(2deg) skewX(5deg) scale(1.1);
+      text-shadow: .5rem 1rem 2rem rgba(black, .2);
+    }
+  }
 }
