@@ -1,0 +1,53 @@
+//Root
+$color-blue: #e1fcff;
+$color-grey-dark: #48749a;
+$color-primary: #dfb60d;
+
+$color-grey-dark: #7F8592;
+$color-grey-light: #F3F6F9;
+
+//RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em;
+$bp-small: 37em;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background-color: $color-blue;
+  font-family: "Gill Sans", Monaco, monospace;
+  color: black;
+  font-weight: 600;
+  line-height: 1.3125;
+  font-size: 15px;
+}
+
+//.container {
+//  display: grid;
+//  background-color: $color-blue;
+//
+//  & > * {
+//    padding: 20px;
+//    font-size: 3rem;
+//  }
+
+  //@media only screen and (max-width: $bp-largest) {
+  //  grid-template-columns: 10% 70% 20%;
+  //}
+
