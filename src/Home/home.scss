@@ -106,8 +106,6 @@
 
       &:hover,
       &:focus {
-        background-color: white;
-        color: darkslategrey;
         transform: translateY(2.5%);
         box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
 
@@ -121,8 +119,9 @@
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
       }
 
-      a:link, a:visited, a:active {
+      a:link, a:visited {
         text-decoration: none;
+        outline: none;
         color: white;
       }
     }

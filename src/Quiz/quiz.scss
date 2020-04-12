@@ -1,33 +1,50 @@
 .header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   margin: 0;
+  grid-template-columns: repeat(2, 1fr);
 
-  &-home-icon {
-    margin-left: 0;
-    grid-column-start: 1;
+  &-backhome {
+    grid-column-start: 1/2;
+    margin-top: 6vh;
+    margin-left: 3vh;
     text-align: left;
-    color: blanchedalmond;
+    color: darkslategrey;
+    border-color: blanchedalmond;
+    background-color: $color-blue;
+    border-radius: 50%;
+    padding: 1rem;
     font-size: 3rem;
-    cursor: pointer;
 
     &:hover {
       color: darkslategrey;
+      cursor: pointer;
     }
+  }
 
-    .timer {
-      margin-right: 0;
-      grid-column-start: 2;
-      text-align: right;
+  &-timer {
+    text-align: right;
+    font-family: "Gill Sans", Monaco, monospace;
+    padding: 1rem 1rem 1rem 2rem;
+    letter-spacing: 5px;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    background-image: linear-gradient(to left, black, darkslategray 10%);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all .2s;
+    text-shadow: .5rem 1rem 2rem rgba(black, .2);
+
+    &:hover {
+      transform: translateX(-1.5rem) scale(1.03);
     }
   }
 }
 
 .quiz {
+  height: 100vh;
+  background-image: url("/pictures/coffee-code.jpg");
+  background-size: cover;
   display: grid;
-  margin: 3rem;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
 
   &-title {
     text-align: center;
@@ -36,91 +53,57 @@
   }
 
   &-ask {
-    text-align: center;
-    align-self: center;
-    height: 8rem;
-    background-color: blanchedalmond;
-    border-radius: 5rem;
+    border-radius: 2rem;
+    display: grid;
+    background-color: transparentize(black, 0.6);
+    margin: 0 10vh 3vh 10vh;
+    padding: 1vh;
     box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
-    border-style: double;
-
-    &-text {
-      color: #ef4933;
-      font-size: 2.5rem;
-      margin-top: 2rem;
-      font-weight: 500;
-    }
-
+    text-align: center;
+    align-content: center;
+    color: $color-blue;
+    font-size: 2.5rem;
   }
-}
-
-.count {
-  text-align: center;
-  font-size: 4rem;
 }
 
 .answer {
   text-align: center;
   margin: 2rem;
-  color: blanchedalmond;
+  grid-template-columns: repeat(3, 1fr);
 
-  &-title {
-    margin: 3rem;
+  &-button {
+    text-align: center;
+    font-weight: lighter;
+    border-radius: 2rem;
+    background-color: white;
+    width: 20vw;
+    margin: 3vh 8vh 3vh 8vh;
+    padding: 4vh;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+    font-size: 2.3rem;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+      transform: translateY(2.5%);
+    }
   }
-}
-
-.button {
-  text-align: center;
-  border-radius: 5rem;
-  height: 5rem;
-  width: min(15rem);
-  margin-bottom: 2rem;
-  color: #b42d1e;
-  font-family: inherit;
-  font-size: 2rem;
-  outline: none;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
-  cursor: pointer;
-
-  &:focus {
-    transform: translateY(2.5%);
-  }
-
 }
 
 .score {
-  justify-self : center;
+  justify-self: center;
   text-align: center;
-  background-color: #b42d1e;
-  color: blanchedalmond;
+  background-color: transparentize(black, 0.6);
+  color: $color-blue;
   border-radius: 5rem;
-  height: 10rem;
-  width: 50%;
+  width: 30%;
+  height: 30%;
   box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
-  border-color: blanchedalmond;
-  border-style: double;
-
-  &-title {
-    margin-top: 3.5rem;
-  }
+  padding: 1rem;
+  margin: 2.5rem;
 
   &-number {
     font-size: 2.5rem;
-  }
-}
-
-.title {
-  text-align: center;
-  display: grid;
-  font-size: 2rem;
-  color: darkslategrey;
-  grid-template-columns: 2fr;
-  text-shadow: .5rem 1rem 2rem rgba(black, .2);
-
-  &-icon {
-    color: darkslategrey;
-    font-size: 2.5rem;
-    margin: 1rem;
   }
 }
 

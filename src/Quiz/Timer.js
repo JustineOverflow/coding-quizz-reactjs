@@ -6,8 +6,8 @@ import { withRouter } from 'react-router-dom'
 class Timer extends Component {
 
     state = {
-        minutes: 0,
-        seconds: 30,
+        minutes: 3,
+        seconds: 0,
     };
 
     componentDidMount() {
@@ -40,9 +40,9 @@ class Timer extends Component {
     render() {
         const {minutes, seconds} = this.state;
         return (
-            <div>
-                <h1 className="timerContainer"> Time Remaining:
-                    <span className="time">{minutes} : {seconds < 10 ? `0${seconds}` : seconds} </span>
+            <div className="header-timer">
+                <h1> Time Remaining
+                    <span> {minutes} : {seconds < 10 ? `0${seconds}` : seconds} </span>
                 </h1>
             </div>
         )

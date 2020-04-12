@@ -31,7 +31,6 @@ class Quiz extends Component {
         this.loadQuestion()
     }
 
-
     loadQuestion() {
         if (this.state.count < this.state.total) {
             (async () => {
@@ -80,33 +79,20 @@ class Quiz extends Component {
 
         {
             return <section className="quiz">
-                <header className="header">
-                    <Link to="/"><i className="header-home-icon fas fa-home"></i></Link>
-                    <div className="header-timer">
-                        <Timer onTimeout={() => this.props.history.push({
-                            pathname: '/end-game',
-                            state: {finalScore: this.state.score, total: this.state.total}
-                        })}/>
-                    </div>
-                </header>
-                <div className="title">
-                    <h1 className="title-quiz"><i className="title-icon fas fa-laptop-code"></i>CODING QUIZ<i
-                        className="title-icon fas fa-question-circle"></i></h1>
+                <div className="header">
+                    <Link to="/"><i className="header-backhome fas fa-home"></i></Link>
+                    <Timer className="header-timer" onTimeout={() => this.props.history.push({
+                        pathname: '/end-game',
+                        state: {finalScore: this.state.score, total: this.state.total}
+                    })}/>
                 </div>
-                <h3 className="quiz-title">Question <span className="count">{this.state.count}</span>:</h3>
-                <div className="quiz-ask">
-                    <h1 className="quiz-ask-text">{this.state.question.name}</h1>
-                </div>
+                <h1 className="quiz-ask">Question {this.state.count} : {this.state.question.name}</h1>
                 <div className="answer">
-                    <h3 className="answer-title">Choose the right answer:</h3>
                     {this.state.question.choices.map(choice =>
-                        <div className="answer-choices">
-                            <i className="icon-choice far fa-hand-point-right"></i>
-                            <button style={{background: 'blanchedalmond'}} className="button" key={choice}
-                                    type="submit" onClick={event => {
-                                this.onChoiceClicked(event, choice)
-                            }}>{choice}</button>
-                        </div>
+                        <button style={{background: 'white'}} className="answer-button" key={choice}
+                                type="submit" onClick={event => {
+                            this.onChoiceClicked(event, choice)
+                        }}>{choice}</button>
                     )}
                 </div>
                 <div className="score">
