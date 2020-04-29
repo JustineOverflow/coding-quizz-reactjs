@@ -15,9 +15,10 @@ class Quiz extends Component {
                 key: '??',
                 name: '??',
                 score: '??',
-                choices: []
+                choices: [],
             },
 
+            seenQuestions: [],
             score: 0,
             count: 0,
             total: 10,
@@ -32,13 +33,16 @@ class Quiz extends Component {
     }
 
     loadQuestion() {
+        let url = `http://127.0.0.1:5000/quiz?seenQuestions=${this.state.seenQuestions.toString()}`;
         if (this.state.count < this.state.total) {
             (async () => {
-                let response = await fetch('http://127.0.0.1:5000/quiz');
+                let response = await fetch(url);
                 let question = await response.json();
+                this.state.seenQuestions.push(question.key);
                 this.setState({
                     question,
-                    count: this.state.count + 1
+                    count: this.state.count + 1,
+                    seenQuestions: this.state.seenQuestions
                 });
             })();
         } else {
@@ -48,11 +52,7 @@ class Quiz extends Component {
                     finalScore: this.state.score,
                     total: this.state.total
                 }
-            }))
-
-            // this.setState({
-            //     isFinished: true,
-            // });
+            }));
         }
     };
 
